@@ -72,7 +72,7 @@ export function Nav() {
               onClick={() => setOpen((v) => !v)}
               className="inline-flex size-10 items-center justify-center border border-border text-foreground lg:hidden"
             >
-              {open ? <Menu className="size-5 opacity-0" /> : <Menu className="size-5" />}
+              <Menu className="size-5" />
             </button>
           </div>
         </nav>
