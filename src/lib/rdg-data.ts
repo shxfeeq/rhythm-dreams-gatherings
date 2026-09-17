@@ -60,3 +60,30 @@ export const collaborations = [
   ["Purple Rah Events", "/assets/images/partners/purple-rah.png"],
   ["SRI Trophy", "/assets/images/partners/sri-trophy.png"],
 ] as const;
+export const whyRDG = [
+  ["Full-service team", "Planning, production, photography, film and entertainment under one roof."],
+  ["Same-event delivery", "Instant Reels edited on site and handed over before the function ends."],
+  ["Campus specialists", "Trusted with fests, symposiums and celebrity nights across Tamil Nadu."],
+  ["Detail obsessed", "Stage, light, sound and schedule rehearsed long before your guests arrive."],
+] as const;
+
+export const testimonials = [
+  ["The reel was on our story before the reception ended. The whole hall was talking about it.", "Divya & Arun", "Wedding, Kumbakonam"],
+  ["They ran our cultural night end to end — stage, sound, celebrity coordination, everything.", "Cultural Secretary", "College Fest, Thanjavur"],
+  ["Calm, organised and genuinely creative. Our product launch felt like a proper production.", "Brand Manager", "Corporate Launch"],
+] as const;
+
+export const instagramGallery = [
+  "/assets/images/work-02.jpg",
+  "/assets/images/instant-reel.jpg",
+  "/assets/images/entertainment.jpg",
+  "/assets/images/work-05.jpg",
+  "/assets/images/college-events.jpg",
+  "/assets/images/work-07.jpg",
+] as const;
+
+export const reels = [
+  ["/assets/videos/reel-01.mp4", "/assets/images/work-04.jpg"],
+  ["/assets/videos/reel-02.mp4", "/assets/images/instant-reel.jpg"],
+  ["/assets/videos/reel-03.mp4", "/assets/images/work-02.jpg"],
+] as const;

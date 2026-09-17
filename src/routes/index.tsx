@@ -1,24 +1,74 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/rdg/nav";
+import {
+  About,
+  Contact,
+  Experiences,
+  Footer,
+  FloatingActions,
+  Hero,
+  InstagramStrip,
+  InstantReels,
+  Partners,
+  Services,
+  Testimonials,
+  WhyRDG,
+  Work,
+} from "@/components/rdg/sections";
+import { useReveal } from "@/hooks/use-reveal";
+import { RDG } from "@/lib/rdg-data";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Rhythm Dreams Gatherings | Event Management in Kumbakonam";
+const description =
+  "RDG plans, produces and films weddings, college fests, corporate events and celebrations across Tamil Nadu — with same-event Instant Reels.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EventPlanner",
+  name: RDG.name,
+  alternateName: RDG.shortName,
+  telephone: RDG.phone,
+  address: { "@type": "PostalAddress", addressLocality: "Kumbakonam", addressRegion: "Tamil Nadu", addressCountry: "IN" },
+  sameAs: [RDG.instagram],
+  areaServed: "Tamil Nadu, India",
+};
+
 function Index() {
+  useReveal();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <InstantReels />
+        <Work />
+        <Experiences />
+        <WhyRDG />
+        <Partners />
+        <Testimonials />
+        <InstagramStrip />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }
