@@ -10,8 +10,8 @@ export function SmartImage({
 }: {
   src: string;
   alt: string;
-  className?: string;
-  imgClassName?: string;
+  className?: string | undefined;
+  imgClassName?: string | undefined;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -50,7 +50,7 @@ export function SmartVideo({
 }) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) return <SmartImage src={poster} alt="" className={className} />;
+  if (failed) return <SmartImage src={poster} alt="" className={className ?? ""} />;
 
   return (
     <video

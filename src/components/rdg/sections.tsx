@@ -115,6 +115,7 @@ export function About() {
 
 export function Services() {
   const [active, setActive] = useState(0);
+  const current = services[active] ?? services[0];
 
   return (
     <Section id="services" className="border-t border-border">
@@ -157,14 +158,14 @@ export function Services() {
 
         <div className="reveal">
           <SmartImage
-            src={services[active].image}
-            alt={services[active].title}
+            src={current.image}
+            alt={current.title}
             className="aspect-video w-full"
           />
-          <h3 className="mt-6 font-display text-2xl">{services[active].title}</h3>
-          <p className="mt-3 text-sm text-muted-foreground">{services[active].description}</p>
+          <h3 className="mt-6 font-display text-2xl">{current.title}</h3>
+          <p className="mt-3 text-sm text-muted-foreground">{current.description}</p>
           <ul className="mt-6 flex flex-wrap gap-2">
-            {services[active].features.map((f) => (
+            {current.features.map((f) => (
               <li key={f} className="border border-border px-3 py-1.5 text-xs text-muted-foreground">
                 {f}
               </li>

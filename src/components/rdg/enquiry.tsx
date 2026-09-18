@@ -12,10 +12,11 @@ const eventTypes = [
 ];
 
 export function EnquiryForm() {
-  const [form, setForm] = useState({ name: "", phone: "", type: eventTypes[0], date: "", message: "" });
+  type Form = { name: string; phone: string; type: string; date: string; message: string };
+  const [form, setForm] = useState<Form>({ name: "", phone: "", type: eventTypes[0] ?? "", date: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const set = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
+  const set = (k: keyof Form, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
