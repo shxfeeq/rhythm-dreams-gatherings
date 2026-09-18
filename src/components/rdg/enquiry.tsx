@@ -12,14 +12,16 @@ const eventTypes = [
 ];
 
 export function EnquiryForm() {
-  const [form, setForm] = useState({ name: "", phone: "", type: eventTypes[0], date: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  type Form = { name: string; phone: string; type: string; date: string; message: string };
+  const [form, setForm] = useState<Form>({ name: "", phone: "", type: eventTypes[0] ?? "", date: "", message: "" });
+  type Errors = { name?: string; phone?: string };
+  const [errors, setErrors] = useState<Errors>({});
 
-  const set = (k: string, v: string) => setForm((f) => ({ ...f, [k]: v }));
+  const set = (k: keyof Form, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const next: Record<string, string> = {};
+    const next: Errors = {};
     if (form.name.trim().length < 2) next.name = "Please enter your name.";
     if (!/^[0-9+\s-]{8,15}$/.test(form.phone.trim())) next.phone = "Please enter a valid phone number.";
     setErrors(next);
