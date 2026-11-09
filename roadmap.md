@@ -1,5 +1,7 @@
 # RDG website roadmap
-- [x] Build shared brand configuration and reusable cinematic sections
-- [x] Implement all requested content, navigation, filters, lightbox, videos, and enquiry flow
-- [x] Add responsive design, accessibility, motion, fallbacks, metadata, and structured data
-- [x] Validate desktop/mobile interactions, overflow, links, media, and preview health
+- [x] Preserve the existing RDG site foundation and inspect the supplied brand assets
+- [ ] Add shared branding, persisted system/light/dark themes, and responsive navigation
+- [ ] Build distinct home, about, leadership, services/detail, gallery, reels, experiences, partners, booking, contact, privacy, and terms pages
+- [ ] Replace the short enquiry with a validated multi-step WhatsApp booking enquiry
+- [ ] Add page-specific metadata and maintain accurate business claims and testimonial labeling
+- [ ] Verify routes, booking message, theme modes, controls, media, and mobile overflow at target widths
