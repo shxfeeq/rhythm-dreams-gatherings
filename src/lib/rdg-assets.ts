@@ -9,11 +9,12 @@ import photo7 from "@/assets/rdg/rdg-event-7.jpg.asset.json";
 import photo8 from "@/assets/rdg/rdg-event-8.jpg.asset.json";
 import signature from "@/assets/rdg/rdg-md-signature.png.asset.json";
 import director from "@/assets/rdg/rdg-managing-director.png.asset.json";
+import transparentSignature from "@/assets/rdg/rdg-md-signature-transparent.png.asset.json";
 
 export const rdgAssets = {
   logo: logo.url,
   eventStrip: eventStrip.url,
-  signature: signature.url,
+  signature: transparentSignature.url,
   director: director.url,
   photos: [
     { src: photo2.url, title: "A family celebration", category: "Celebrations", alt: "Young child at an outdoor family celebration" },

@@ -12,6 +12,7 @@ const choices: { value: ThemeChoice; label: string; Icon: typeof Sun }[] = [
 
 function applyTheme(theme: ThemeChoice) {
   document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme === "system" ? "light dark" : theme;
   window.localStorage.setItem("rdg-theme", theme);
 }
 
@@ -23,6 +24,7 @@ export function ThemeToggle() {
     const initial = saved === "light" || saved === "dark" ? saved : "system";
     setTheme(initial);
     document.documentElement.dataset.theme = initial;
+    document.documentElement.style.colorScheme = initial === "system" ? "light dark" : initial;
   }, []);
 
   return (
