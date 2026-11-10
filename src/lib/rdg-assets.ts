@@ -8,11 +8,13 @@ import photo6 from "@/assets/rdg/rdg-event-6.jpg.asset.json";
 import photo7 from "@/assets/rdg/rdg-event-7.jpg.asset.json";
 import photo8 from "@/assets/rdg/rdg-event-8.jpg.asset.json";
 import signature from "@/assets/rdg/rdg-md-signature.png.asset.json";
+import director from "@/assets/rdg/rdg-managing-director.png.asset.json";
 
 export const rdgAssets = {
   logo: logo.url,
   eventStrip: eventStrip.url,
   signature: signature.url,
+  director: director.url,
   photos: [
     { src: photo2.url, title: "A family celebration", category: "Celebrations", alt: "Young child at an outdoor family celebration" },
     { src: photo3.url, title: "A thoughtful moment", category: "Celebrations", alt: "Two people sharing a celebratory bouquet" },

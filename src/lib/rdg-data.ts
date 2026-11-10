@@ -1,3 +1,5 @@
+import { rdgAssets } from "@/lib/rdg-assets";
+
 export const RDG = {
   name: "Rhythm Dreams Gatherings",
   shortName: "RDG",
@@ -7,16 +9,29 @@ export const RDG = {
   instagram: "https://www.instagram.com/rhythm_dreams_gatherings?stkn=NmVkaWcyZW55cWl6",
   instagramHandle: "@rhythm_dreams_gatherings",
   location: "Kumbakonam, Tamil Nadu, India",
+  address: "Behind Venkataramana Sweet Bakery & Hotel, Near New Bus Stand, Kumbakonam – 612001, Tamil Nadu, India",
+  email: "rhythmdreamgathering@gmail.com",
+  youtube: "https://www.youtube.com/@rhythmdreamgathering",
+  facebook: "https://share.google/TD2CYN3KVe8pBGrEL",
 } as const;
 
 export const navigation = [
-  ["Home", "home"],
-  ["About", "about"],
-  ["Services", "services"],
-  ["Work", "work"],
-  ["Experiences", "experiences"],
-  ["Partners", "partners"],
-  ["Contact", "contact"],
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Services", "/services"],
+  ["Our Work", "/work"],
+  ["Experiences", "/experiences"],
+  ["Partners", "/partners"],
+  ["Contact", "/contact"],
+] as const;
+
+export const serviceCatalog = [
+  { slug: "event-management", title: "Event Management", category: "Event Management", image: rdgAssets.photos[4].src, description: "Thoughtful coordination for weddings, receptions, engagements, birthdays, anniversaries, baby showers, naming ceremonies, corporate and college events, cultural festivals, private and customized celebrations.", items: ["Weddings and receptions", "Engagement ceremonies", "Birthdays and anniversaries", "Baby showers and naming ceremonies", "Corporate, college and cultural events", "Private and customized celebrations"] },
+  { slug: "photography-videography", title: "Photography & Videography", category: "Photography & Videography", image: rdgAssets.photos[5].src, description: "Photography and film coverage shaped around the people, rituals and atmosphere of your event.", items: ["Traditional and candid photography", "Wedding photography and cinematography", "Pre-wedding photography and films", "Drone photography and videography, subject to venue permissions", "Corporate and event coverage", "Live streaming coordination", "Cinematic highlights and short-form reels", "Professional photo albums"] },
+  { slug: "event-production", title: "Event Production", category: "Event Production", image: rdgAssets.photos[3].src, description: "Production arrangements coordinated with suitable vendors and partners for your venue and brief.", items: ["Stage decoration", "Lighting arrangements", "Sound systems", "LED screens", "Event production and coordination", "Special effects, subject to venue and safety approval", "Customized event arrangements"] },
+  { slug: "photo-studio-frames", title: "Photo Studio & Frames", category: "Photo Studio & Photo Frames", image: rdgAssets.photos[0].src, description: "Photo printing, framing and personalized keepsakes coordinated for family moments and celebrations.", items: ["Photo printing and passport or ID photographs", "Photo enlargements", "Custom, wooden, collage and acrylic frames", "Canvas prints and personalized photo gifts", "Wedding albums", "Photo restoration, where available"] },
+  { slug: "printing-solutions", title: "Printing Solutions", category: "Printing Services", image: rdgAssets.photos[2].src, description: "RDG accepts your printing brief and coordinates production through external printing vendors and partners. RDG does not own or operate printing machinery or an in-house press.", items: ["Wedding invitations, visiting cards and business cards", "Brochures, flyers, posters and flex banners", "Stickers, labels, certificates and business stationery", "Digital and offset printing coordination", "Customized printing requirements", "Process: share requirements → RDG reviews specifications → coordinates with print partners → shares a quotation → customer confirms the order"] },
+  { slug: "creative-design", title: "Creative Design", category: "Creative Design", image: rdgAssets.photos[1].src, description: "Visual design support for invitations, events, social channels and promotional communication.", items: ["Digital and wedding invitations", "Event posters", "Social media creatives", "Branding", "Promotional designs", "Customized graphic design"] },
 ] as const;
 
 export const services = [
@@ -33,14 +48,13 @@ export const services = [
 ] as const;
 
 export const workItems = [
-  { src: "/assets/images/work-01.jpg", title: "A Night in Bloom", category: "Weddings", location: "Tamil Nadu" },
-  { src: "/assets/images/work-02.jpg", title: "Campus After Dark", category: "College", location: "Kumbakonam" },
-  { src: "/assets/images/work-03.jpg", title: "Behind the Experience", category: "Corporate", location: "Tamil Nadu" },
-  { src: "/assets/images/work-04.jpg", title: "Live in the Moment", category: "Instant Reels", location: "Kumbakonam" },
-  { src: "/assets/images/work-05.jpg", title: "Golden Vows", category: "Celebrations", location: "Tamil Nadu" },
-  { src: "/assets/images/work-06.jpg", title: "Sound in Motion", category: "DJ & Music", location: "Kumbakonam" },
-  { src: "/assets/images/work-07.jpg", title: "The Main Stage", category: "Entertainment", location: "Tamil Nadu" },
-  { src: "/assets/images/work-08.jpg", title: "Made to Share", category: "Instant Reels", location: "Kumbakonam" },
+  { src: rdgAssets.photos[4].src, title: "Wedding ceremony", category: "Weddings", location: "Kumbakonam" },
+  { src: rdgAssets.photos[5].src, title: "A quiet wedding moment", category: "Weddings", location: "Kumbakonam" },
+  { src: rdgAssets.photos[6].src, title: "Couple portrait", category: "Photography", location: "Kumbakonam" },
+  { src: rdgAssets.photos[3].src, title: "On stage", category: "Live Events", location: "Kumbakonam" },
+  { src: rdgAssets.photos[2].src, title: "Classical performance", category: "Live Events", location: "Kumbakonam" },
+  { src: rdgAssets.photos[0].src, title: "Family celebration", category: "Celebrations", location: "Kumbakonam" },
+  { src: rdgAssets.photos[1].src, title: "A thoughtful moment", category: "Celebrations", location: "Kumbakonam" },
 ] as const;
 
 export const experiences = [
@@ -68,9 +82,7 @@ export const whyRDG = [
 ] as const;
 
 export const testimonials = [
-  ["The reel was on our story before the reception ended. The whole hall was talking about it.", "Divya & Arun", "Wedding, Kumbakonam"],
-  ["They ran our cultural night end to end — stage, sound, celebrity coordination, everything.", "Cultural Secretary", "College Fest, Thanjavur"],
-  ["Calm, organised and genuinely creative. Our product launch felt like a proper production.", "Brand Manager", "Corporate Launch"],
+  ["Customer experiences will be shared here after they are verified and approved for publication.", "Experiences", "Coming soon"],
 ] as const;
 
 export const instagramGallery = [
