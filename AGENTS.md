@@ -11,3 +11,6 @@
 
 ## RDG site architecture
 - Keep RDG pages as TanStack file routes with shared reusable navigation, footer, theme handling, and brand data; this preserves the existing Start architecture while supporting distinct pages.
+
+## RDG site architecture
+- Keep RDG pages as TanStack file routes with shared reusable navigation, footer, theme handling, and brand data; this preserves the existing Start architecture while supporting distinct pages.

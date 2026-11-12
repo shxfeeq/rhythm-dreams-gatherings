@@ -67,19 +67,24 @@ export function LeadershipPage() {
   return (
     <PageShell>
       <PageSection>
-        <PageIntro eyebrow="Leadership" title="A personal commitment to the details." copy="Meet Mr. Siva Sankar S., Managing Director of Rhythm Dreams Gatherings." />
+        <PageIntro eyebrow="Founder & Event Manager" title="S. Sivasankar" copy="Founder & Event Manager of RDG Event Company, Rhythm Dreams Gatherings." />
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-          <SmartImage src={rdgAssets.director} alt="Mr. Siva Sankar S., Managing Director of Rhythm Dreams Gatherings" className="mx-auto aspect-[4/5] w-full max-w-xl" imgClassName="object-cover object-center" />
+          <SmartImage src={rdgAssets.director} alt="S. Sivasankar, Founder and Event Manager of RDG Event Company" className="mx-auto aspect-[4/5] w-full max-w-xl" imgClassName="object-cover object-center" />
           <div className="py-4">
-            <p className="eyebrow mb-4">Managing Director</p>
-            <h2 className="font-display text-4xl sm:text-5xl">Mr. Siva Sankar S.</h2>
-            <p className="mt-3 text-muted-foreground">Managing Director · Rhythm Dreams Gatherings</p>
-            <p className="mt-8 border-l border-champagne pl-5 text-lg leading-relaxed">MBA in Event Management</p>
-            <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">His role at RDG is centered on bringing a customer’s brief into focus, coordinating the relevant services and keeping the event plan attentive to the details.</p>
-            <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">Further professional biography and a personal leadership message can be added when provided.</p>
+            <p className="eyebrow mb-4">Founder & Event Manager</p>
+            <h2 className="font-display text-4xl sm:text-5xl">S. Sivasankar</h2>
+            <p className="mt-3 text-muted-foreground">Founder & Event Manager · RDG Event Company</p>
+            <div className="mt-8 space-y-3 border-l border-champagne pl-5 text-sm leading-relaxed text-muted-foreground">
+              <p>B.Com · SASTRA University</p>
+              <p>Event Management Course · VELS University</p>
+              <p>Distinction Certificate in Event Management</p>
+            </div>
+            <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">S. Sivasankar founded Rhythm Dreams Gatherings around creativity, thoughtful planning and memorable experiences. Through RDG, he focuses on event planning, coordination, creative production, team management, client relationships and brand development.</p>
+            <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">His approach combines creative thinking, professional coordination and attention to detail to bring ideas into well-organized events.</p>
+            <blockquote className="mt-6 max-w-xl border-l border-border pl-5 font-display text-lg leading-relaxed">“Every event is an opportunity to create something memorable. Our focus is to bring ideas to life through creativity, teamwork and thoughtful execution.”</blockquote>
             <div className="mt-8 inline-flex max-w-full flex-col gap-3 bg-popover p-4">
               <span className="text-xs uppercase text-muted-foreground">Official signature</span>
-              <img src={rdgAssets.signature} alt="Handwritten signature of Mr. Siva Sankar S." className="h-auto max-h-24 w-full max-w-sm object-contain object-left" />
+              <img src={rdgAssets.signature} alt="Official handwritten signature of S. Sivasankar" className="h-auto max-h-24 w-full max-w-sm object-contain object-left" />
             </div>
           </div>
         </div>
