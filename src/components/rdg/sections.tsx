@@ -14,6 +14,9 @@ import {
   workItems,
 } from "@/lib/rdg-data";
 import { cn } from "@/lib/utils";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import { rdgAssets } from "@/lib/rdg-assets";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow mb-4">{children}</p>;
@@ -39,32 +42,31 @@ export function Hero() {
   return (
     <section id="home" className="relative grain flex min-h-[100svh] items-end overflow-hidden">
       <div className="absolute inset-0">
-        <SmartVideo src="/assets/videos/hero.mp4" poster="/assets/images/hero.jpg" className="h-full w-full" />
+        <SmartImage src={rdgAssets.photos[5].src} alt="Newlyweds sharing a quiet moment" className="h-full w-full" imgClassName="object-cover object-center" />
         <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--ink)_6%,oklch(0.12_0.005_250/0.55)_55%,oklch(0.12_0.005_250/0.75))]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-16 md:px-10 md:pb-24">
         <p className="eyebrow reveal">Kumbakonam · Tamil Nadu · India</p>
         <h1 className="reveal mt-6 max-w-5xl font-display text-[clamp(2.6rem,9vw,7rem)] font-extrabold leading-[0.95]">
-          Rhythm Dreams
-          <span className="block text-champagne">Gatherings</span>
+          Every Celebration
+          <span className="block text-champagne">Deserves to Be Extraordinary.</span>
         </h1>
         <p className="reveal mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-          Event management, cinematic photography and creative experiences — planned with intent
-          and executed with precision.
+          From unforgettable celebrations to timeless photographs and creative experiences, RDG brings your vision to life.
         </p>
         <div className="reveal mt-10 flex flex-wrap gap-3">
           <a
-            href="#contact"
-            className="inline-flex items-center gap-3 bg-champagne px-8 py-4 text-[0.7rem] uppercase tracking-[0.3em] text-ink transition-opacity hover:opacity-90"
+            href="/booking"
+            className="inline-flex items-center gap-3 bg-primary px-8 py-4 text-[0.7rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
           >
             Plan your event <ArrowRight className="size-4" aria-hidden />
           </a>
           <a
-            href="#work"
-            className="inline-flex items-center gap-3 border border-border px-8 py-4 text-[0.7rem] uppercase tracking-[0.3em] text-foreground transition-colors hover:border-champagne hover:text-champagne"
+            href="/services"
+            className="inline-flex items-center gap-3 border border-border px-8 py-4 text-[0.7rem] uppercase text-foreground transition-colors hover:border-champagne hover:text-champagne"
           >
-            View our work
+            Explore services
           </a>
         </div>
       </div>
@@ -92,9 +94,9 @@ export function About() {
           </p>
           <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {[
-              ["10+", "Service verticals"],
-              ["Same day", "Instant Reels"],
-              ["Tamil Nadu", "Wherever you are"],
+              ["Kumbakonam", "Our home"],
+              ["Creative", "Event experiences"],
+              ["By brief", "Tailored services"],
             ].map(([a, b]) => (
               <div key={b}>
                 <p className="font-display text-xl text-champagne md:text-2xl">{a}</p>
@@ -104,8 +106,8 @@ export function About() {
           </div>
         </div>
         <SmartImage
-          src="/assets/images/about.jpg"
-          alt="RDG team producing a live event"
+          src={rdgAssets.eventStrip}
+          alt="A selection of genuine RDG family, wedding and event photographs"
           className="reveal aspect-4/5 w-full"
         />
       </div>
@@ -485,13 +487,17 @@ export function Contact() {
                 <Instagram className="size-4 text-champagne" aria-hidden /> {RDG.instagramHandle}
               </a>
             </li>
+            <li><a href={`mailto:${RDG.email}`} className="inline-flex items-center gap-3 hover:text-champagne">{RDG.email}</a></li>
             <li className="inline-flex items-center gap-3 text-muted-foreground">
               <MapPin className="size-4 text-champagne" aria-hidden /> {RDG.location}
             </li>
           </ul>
         </div>
-        <div className="reveal">
-          <EnquiryForm />
+        <div className="reveal flex flex-col justify-center border-t border-border pt-7">
+          <h3 className="font-display text-2xl">Tell us what you’re planning.</h3>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">Share your event details, services and preferences in a guided enquiry. Your message opens in WhatsApp for you to review and send.</p>
+          <Button asChild className="mt-7 w-fit"><Link to="/booking">Start a booking enquiry</Link></Button>
+          <Button asChild variant="outline" className="mt-3 w-fit"><Link to="/contact">Full contact details</Link></Button>
         </div>
       </div>
     </Section>
@@ -502,12 +508,18 @@ export function Footer() {
   return (
     <footer className="border-t border-border px-5 py-12 md:px-10">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-6">
-        <div>
-          <p className="font-display text-lg tracking-[0.3em]">RDG</p>
+        <div className="flex min-w-0 items-center gap-4">
+          <Link to="/" aria-label="RDG home"><img src={rdgAssets.logo} alt="RDG Event Entertainments" className="h-14 w-14 object-contain" /></Link>
+          <div>
           <p className="mt-2 text-xs text-muted-foreground">
             {RDG.name} · {RDG.location}
           </p>
+          <p className="mt-1 max-w-md text-xs text-muted-foreground">Event management, photography, videography and creative services in Kumbakonam.</p>
+          </div>
         </div>
+        <nav aria-label="Footer links" className="flex flex-wrap gap-x-5 gap-y-3 text-xs text-muted-foreground">
+          {[["Home", "/"], ["About", "/about"], ["Services", "/services"], ["Our Work", "/work"], ["Experiences", "/experiences"], ["Partners", "/partners"], ["Contact", "/contact"], ["Book Now", "/booking"], ["Privacy", "/privacy"], ["Terms", "/terms"]].map(([label, to]) => <Link key={to} to={to} className="hover:text-champagne">{label}</Link>)}
+        </nav>
         <div className="flex gap-3">
           <a
             href={`tel:${RDG.phone}`}
@@ -534,8 +546,10 @@ export function Footer() {
           >
             <Instagram className="size-4" />
           </a>
+          <a href={RDG.youtube} target="_blank" rel="noreferrer" aria-label="RDG on YouTube" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">Y</a>
+          <a href={RDG.facebook} target="_blank" rel="noreferrer" aria-label="RDG on Facebook" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">f</a>
         </div>
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} {RDG.name}</p>
+        <div className="w-full border-t border-border pt-5 text-xs text-muted-foreground"><p>© {new Date().getFullYear()} {RDG.name}</p><p className="mt-2">{RDG.address} · <a href={`tel:${RDG.phone}`} className="hover:text-champagne">{RDG.phoneDisplay}</a> · <a href={`mailto:${RDG.email}`} className="hover:text-champagne">{RDG.email}</a></p></div>
       </div>
     </footer>
   );
@@ -543,22 +557,23 @@ export function Footer() {
 
 export function FloatingActions() {
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] shadow-lg sm:inset-x-auto sm:bottom-5 sm:right-5 sm:flex sm:flex-col sm:border-0 sm:bg-transparent sm:pb-0 sm:shadow-none">
       <a
         href={RDG.whatsapp}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="inline-flex size-13 items-center justify-center rounded-full bg-champagne text-ink shadow-lg transition-transform hover:scale-105"
+        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:bg-primary sm:text-primary-foreground sm:shadow-lg"
       >
-        <MessageCircle className="size-5" />
+        <MessageCircle className="size-5" /><span className="sm:hidden">WhatsApp</span>
       </a>
+      <Link to="/booking" aria-label="Book RDG" className="inline-flex min-h-12 items-center justify-center gap-2 border-x border-border bg-primary text-sm text-primary-foreground sm:hidden"><span>Book Now</span></Link>
       <a
         href={`tel:${RDG.phone}`}
         aria-label="Call RDG"
-        className="inline-flex size-13 items-center justify-center rounded-full border border-border bg-ink text-foreground shadow-lg transition-transform hover:scale-105"
+        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:border sm:border-border sm:bg-ink sm:text-foreground sm:shadow-lg"
       >
-        <Phone className="size-5" />
+        <Phone className="size-5" /><span className="sm:hidden">Call</span>
       </a>
     </div>
   );
