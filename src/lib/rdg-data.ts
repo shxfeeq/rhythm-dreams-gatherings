@@ -3,6 +3,8 @@ import { rdgAssets } from "@/lib/rdg-assets";
 export const RDG = {
   name: "Rhythm Dreams Gatherings",
   shortName: "RDG",
+  founder: "S. Sivasankar",
+  designation: "Founder & Event Manager, RDG Event Company",
   phoneDisplay: "+91 73975 66818",
   phone: "+917397566818",
   whatsapp: "https://wa.me/917397566818",
