@@ -36,11 +36,11 @@ export function Nav() {
             <li><Link to="/leadership" className="text-[0.68rem] uppercase text-muted-foreground transition-colors hover:text-champagne">Founder</Link></li>
             <li><Link to="/reels" className="text-[0.68rem] uppercase text-muted-foreground transition-colors hover:text-champagne">Instant Reels</Link></li>
           </ul>
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <ThemeToggle />
             <Button asChild><Link to="/booking">Book Now</Link></Button>
           </div>
-          <Button type="button" variant="outline" size="icon" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="size-10 lg:hidden">
+          <Button type="button" variant="outline" size="icon" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="size-10 xl:hidden">
             {open ? <X /> : <Menu />}
           </Button>
         </nav>

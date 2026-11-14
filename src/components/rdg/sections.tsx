@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { SmartImage, SmartVideo } from "./media";
-import { EnquiryForm } from "./enquiry";
+import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { SmartImage } from "./media";
 import {
   RDG,
   collaborations,
   experiences,
   instagramGallery,
-  reels,
   services,
   testimonials,
   whyRDG,
@@ -48,7 +46,7 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-16 md:px-10 md:pb-24">
         <p className="eyebrow reveal">Kumbakonam · Tamil Nadu · India</p>
-        <h1 className="reveal mt-6 max-w-5xl font-display text-[clamp(2.6rem,9vw,7rem)] font-extrabold leading-[0.95]">
+        <h1 className="reveal mt-6 max-w-5xl font-display text-4xl font-extrabold leading-[0.98] sm:text-6xl lg:text-7xl">
           Every Celebration
           <span className="block text-champagne">Deserves to Be Extraordinary.</span>
         </h1>
@@ -56,18 +54,18 @@ export function Hero() {
           From unforgettable celebrations to timeless photographs and creative experiences, RDG brings your vision to life.
         </p>
         <div className="reveal mt-10 flex flex-wrap gap-3">
-          <a
-            href="/booking"
+          <Link
+            to="/booking"
             className="inline-flex items-center gap-3 bg-primary px-8 py-4 text-[0.7rem] uppercase text-primary-foreground transition-opacity hover:opacity-90"
           >
             Plan your event <ArrowRight className="size-4" aria-hidden />
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="inline-flex items-center gap-3 border border-border px-8 py-4 text-[0.7rem] uppercase text-foreground transition-colors hover:border-champagne hover:text-champagne"
           >
             Explore services
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -80,7 +78,7 @@ export function About() {
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="reveal">
           <Eyebrow>About RDG</Eyebrow>
-          <h2 className="max-w-xl font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+          <h2 className="max-w-xl font-display text-3xl leading-tight sm:text-4xl">
             We build events people keep talking about.
           </h2>
           <p className="mt-6 text-muted-foreground">
@@ -108,8 +106,26 @@ export function About() {
         <SmartImage
           src={rdgAssets.eventStrip}
           alt="A selection of genuine RDG family, wedding and event photographs"
-          className="reveal aspect-4/5 w-full"
+          className="reveal aspect-[4/5] w-full"
         />
+      </div>
+    </Section>
+  );
+}
+
+export function FounderPreview() {
+  return (
+    <Section className="border-t border-border bg-card/40">
+      <div className="grid items-center gap-9 md:grid-cols-[0.65fr_1.35fr] md:gap-14">
+        <SmartImage src={rdgAssets.director} alt="S. Sivasankar, Founder and Event Manager at RDG Event Company" className="mx-auto aspect-[4/5] w-full max-w-sm" imgClassName="object-cover object-center" />
+        <div>
+          <Eyebrow>Founder & Event Manager</Eyebrow>
+          <h2 className="font-display text-3xl sm:text-4xl">S. Sivasankar</h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">Rhythm Dreams Gatherings was founded around creativity, thoughtful planning and memorable experiences. S. Sivasankar focuses on event planning, coordination, creative production, team management and client relationships.</p>
+          <div className="mt-5 space-y-1 text-sm text-muted-foreground"><p>B.Com · SASTRA University</p><p>Event Management Course · VELS University</p><p>Distinction Certificate in Event Management</p></div>
+          <img src={rdgAssets.signature} alt="Official handwritten signature of S. Sivasankar" className="mt-5 h-auto max-h-14 w-full max-w-xs object-contain object-left" />
+          <Link to="/leadership" className="mt-5 inline-flex items-center gap-2 text-sm text-champagne hover:underline">Meet the founder <ArrowUpRight className="size-4" /></Link>
+        </div>
       </div>
     </Section>
   );
@@ -124,7 +140,7 @@ export function Services() {
       <div className="reveal mb-14 flex flex-wrap items-end justify-between gap-6">
         <div>
           <Eyebrow>What we do</Eyebrow>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">Services</h2>
+          <h2 className="font-display text-3xl leading-tight sm:text-4xl">Services</h2>
         </div>
         <p className="max-w-md text-sm text-muted-foreground">
           Ten verticals, one production team. Select a service to see exactly what is included.
@@ -185,27 +201,23 @@ export function InstantReels() {
       <div className="reveal grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="eyebrow mb-4 text-lime">Instant Reels</p>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.05]">
+          <h2 className="font-display text-3xl leading-tight sm:text-4xl">
             Your reel, before the function ends.
           </h2>
           <p className="mt-6 text-muted-foreground">
             We shoot, cut and colour on site — so your highlight reel is on your phone and your
             story while your guests are still on the floor.
           </p>
-          <a
-            href={RDG.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-3 border border-lime px-8 py-4 text-[0.7rem] uppercase tracking-[0.3em] text-lime transition-colors hover:bg-lime hover:text-ink"
+          <Link
+            to="/reels"
+            className="mt-8 inline-flex items-center gap-3 border border-lime px-8 py-4 text-[0.7rem] uppercase text-lime transition-colors hover:bg-lime hover:text-ink"
           >
             Book Instant Reels <MessageCircle className="size-4" aria-hidden />
-          </a>
+          </Link>
         </div>
-        <div className="grid grid-cols-3 gap-3">
-          {reels.map(([src, poster]) => (
-            <div key={src} className="aspect-9/16 overflow-hidden bg-secondary">
-              <SmartVideo src={src} poster={poster} />
-            </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {rdgAssets.photos.slice(2, 5).map((photo) => (
+            <SmartImage key={photo.src} src={photo.src} alt={photo.alt} className="aspect-[9/16] w-full" />
           ))}
         </div>
       </div>
@@ -236,7 +248,7 @@ export function Work() {
       <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-6">
         <div>
           <Eyebrow>Selected work</Eyebrow>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">The Gallery</h2>
+          <h2 className="font-display text-3xl leading-tight sm:text-4xl">The Gallery</h2>
         </div>
         <ul className="flex flex-wrap gap-2">
           {categories.map((c) => (
@@ -261,6 +273,8 @@ export function Work() {
           ))}
         </ul>
       </div>
+
+      <div className="mt-8"><Button asChild variant="outline"><Link to="/work">Explore all photographs <ArrowRight /></Link></Button></div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((w, i) => (
@@ -341,7 +355,7 @@ export function Experiences() {
     <Section id="experiences" className="border-t border-border bg-card/40">
       <div className="reveal mb-12">
         <Eyebrow>Experiences</Eyebrow>
-        <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">
           Every kind of gathering
         </h2>
       </div>
@@ -365,7 +379,7 @@ export function WhyRDG() {
     <Section className="border-t border-border">
       <div className="reveal mb-12">
         <Eyebrow>Why RDG</Eyebrow>
-        <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">
           Serious events need a serious team
         </h2>
       </div>
@@ -386,7 +400,7 @@ export function Partners() {
     <Section id="partners" className="border-t border-border">
       <div className="reveal mb-12">
         <Eyebrow>Collaborations</Eyebrow>
-        <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">
           Teams we have worked with
         </h2>
       </div>
@@ -411,16 +425,7 @@ export function Testimonials() {
           What clients say
         </h2>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
-        {testimonials.map(([quote, name, role]) => (
-          <blockquote key={name} className="reveal border border-border p-8">
-            <p className="font-display text-lg leading-snug">“{quote}”</p>
-            <footer className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              <span className="text-champagne">{name}</span> · {role}
-            </footer>
-          </blockquote>
-        ))}
-      </div>
+      <p className="max-w-2xl border-t border-border pt-6 leading-relaxed text-muted-foreground">Verified customer testimonials will be added here once provided and approved for publication. RDG does not display invented customer reviews or ratings.</p>
     </Section>
   );
 }
@@ -431,7 +436,7 @@ export function InstagramStrip() {
       <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
         <div>
           <Eyebrow>On Instagram</Eyebrow>
-          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)]">{RDG.instagramHandle}</h2>
+          <h2 className="break-all font-display text-2xl sm:text-3xl">{RDG.instagramHandle}</h2>
         </div>
         <a
           href={RDG.instagram}
@@ -465,7 +470,7 @@ export function Contact() {
       <div className="grid gap-14 lg:grid-cols-2">
         <div className="reveal">
           <Eyebrow>Contact</Eyebrow>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+          <h2 className="font-display text-3xl leading-tight sm:text-4xl">
             Let’s plan something worth remembering.
           </h2>
           <p className="mt-6 text-muted-foreground">
@@ -487,10 +492,11 @@ export function Contact() {
                 <Instagram className="size-4 text-champagne" aria-hidden /> {RDG.instagramHandle}
               </a>
             </li>
-            <li><a href={`mailto:${RDG.email}`} className="inline-flex items-center gap-3 hover:text-champagne">{RDG.email}</a></li>
+            <li><a href={`mailto:${RDG.email}`} className="inline-flex items-start gap-3 break-all hover:text-champagne">{RDG.email}</a></li>
             <li className="inline-flex items-center gap-3 text-muted-foreground">
               <MapPin className="size-4 text-champagne" aria-hidden /> {RDG.location}
             </li>
+            <li><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(RDG.address)}`} target="_blank" rel="noreferrer" className="inline-flex items-start gap-3 hover:text-champagne"><MapPin className="size-4 shrink-0 text-champagne" aria-hidden />{RDG.address}</a></li>
           </ul>
         </div>
         <div className="reveal flex flex-col justify-center border-t border-border pt-7">
@@ -502,6 +508,16 @@ export function Contact() {
       </div>
     </Section>
   );
+}
+
+export function FAQ() {
+  const questions = [
+    ["How do I enquire about an event?", "Use the booking enquiry form to share your event, services and contact details. It opens WhatsApp with your message for you to review and send."],
+    ["Does the enquiry confirm my booking?", "No. It is an enquiry only. RDG will discuss availability, requirements and a quotation with you separately."],
+    ["Does RDG provide printing services?", "RDG reviews printing requirements and coordinates production through external printing vendors and partners. RDG does not operate its own printing press."],
+    ["Can I include reference images?", "You can select images in the form, then attach them manually after WhatsApp opens. The files are not transferred automatically."],
+  ];
+  return <Section className="border-t border-border"><div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]"><div><Eyebrow>Common questions</Eyebrow><h2 className="font-display text-3xl sm:text-4xl">Before you enquire</h2></div><div className="divide-y divide-border">{questions.map(([question, answer]) => <details key={question} className="group py-5"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg marker:hidden"><span>{question}</span><span className="text-champagne transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{answer}</p></details>)}</div></div></Section>;
 }
 
 export function Footer() {
