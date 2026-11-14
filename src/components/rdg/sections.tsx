@@ -579,7 +579,7 @@ export function FloatingActions() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:bg-primary sm:text-primary-foreground sm:shadow-lg"
+        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:border sm:border-border sm:shadow-lg"
       >
         <MessageCircle className="size-5" /><span className="sm:hidden">WhatsApp</span>
       </a>
@@ -587,7 +587,7 @@ export function FloatingActions() {
       <a
         href={`tel:${RDG.phone}`}
         aria-label="Call RDG"
-        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:border sm:border-border sm:bg-ink sm:text-foreground sm:shadow-lg"
+        className="inline-flex min-h-12 items-center justify-center gap-2 bg-background text-sm text-foreground transition-colors hover:text-champagne sm:size-13 sm:rounded-full sm:border sm:border-border sm:shadow-lg"
       >
         <Phone className="size-5" /><span className="sm:hidden">Call</span>
       </a>

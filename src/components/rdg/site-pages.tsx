@@ -82,7 +82,7 @@ export function LeadershipPage() {
             <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">S. Sivasankar founded Rhythm Dreams Gatherings around creativity, thoughtful planning and memorable experiences. Through RDG, he focuses on event planning, coordination, creative production, team management, client relationships and brand development.</p>
             <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">His approach combines creative thinking, professional coordination and attention to detail to bring ideas into well-organized events.</p>
             <blockquote className="mt-6 max-w-xl border-l border-border pl-5 font-display text-lg leading-relaxed">“Every event is an opportunity to create something memorable. Our focus is to bring ideas to life through creativity, teamwork and thoughtful execution.”</blockquote>
-            <div className="mt-8 inline-flex max-w-full flex-col gap-3 bg-popover p-4">
+            <div className="mt-8 inline-flex max-w-full flex-col gap-3 bg-signature-background p-4 text-foreground">
               <span className="text-xs uppercase text-muted-foreground">Official signature</span>
               <img src={rdgAssets.signature} alt="Official handwritten signature of S. Sivasankar" className="h-auto max-h-24 w-full max-w-sm object-contain object-left" />
             </div>

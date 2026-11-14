@@ -46,7 +46,7 @@ export function Nav() {
         </nav>
       </header>
 
-      <div className={cn("fixed inset-0 z-40 flex flex-col bg-background pt-20 transition-transform duration-300 xl:hidden", open ? "translate-x-0" : "pointer-events-none translate-x-full")} aria-hidden={!open}>
+      <div className={cn("fixed inset-0 z-40 flex flex-col bg-background pt-20 transition-transform duration-300 xl:hidden", open ? "translate-x-0" : "pointer-events-none translate-x-full")} aria-hidden={!open} inert={!open}>
         <div className="flex items-center justify-between border-b border-border px-5 py-3">
           <span className="text-xs uppercase text-muted-foreground">Choose a page</span>
           <ThemeToggle />
