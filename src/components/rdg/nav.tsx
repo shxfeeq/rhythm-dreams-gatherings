@@ -36,17 +36,17 @@ export function Nav() {
             <li><Link to="/leadership" className="text-[0.68rem] uppercase text-muted-foreground transition-colors hover:text-champagne">Founder</Link></li>
             <li><Link to="/reels" className="text-[0.68rem] uppercase text-muted-foreground transition-colors hover:text-champagne">Instant Reels</Link></li>
           </ul>
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <ThemeToggle />
             <Button asChild><Link to="/booking">Book Now</Link></Button>
           </div>
-          <Button type="button" variant="outline" size="icon" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="size-10 lg:hidden">
+          <Button type="button" variant="outline" size="icon" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="size-10 xl:hidden">
             {open ? <X /> : <Menu />}
           </Button>
         </nav>
       </header>
 
-      <div className={cn("fixed inset-0 z-40 flex flex-col bg-background pt-20 transition-transform duration-300 xl:hidden", open ? "translate-x-0" : "pointer-events-none translate-x-full")} aria-hidden={!open}>
+      <div className={cn("fixed inset-0 z-40 flex flex-col bg-background pt-20 transition-transform duration-300 xl:hidden", open ? "translate-x-0" : "pointer-events-none translate-x-full")} aria-hidden={!open} inert={!open}>
         <div className="flex items-center justify-between border-b border-border px-5 py-3">
           <span className="text-xs uppercase text-muted-foreground">Choose a page</span>
           <ThemeToggle />

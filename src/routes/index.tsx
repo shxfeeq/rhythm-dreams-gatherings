@@ -3,6 +3,8 @@ import { Nav } from "@/components/rdg/nav";
 import {
   About,
   Contact,
+  FounderPreview,
+  FAQ,
   Experiences,
   Footer,
   FloatingActions,
@@ -57,6 +59,7 @@ function Index() {
       <main>
         <Hero />
         <About />
+        <FounderPreview />
         <Services />
         <InstantReels />
         <Work />
@@ -64,6 +67,7 @@ function Index() {
         <WhyRDG />
         <Partners />
         <Testimonials />
+        <FAQ />
         <InstagramStrip />
         <Contact />
       </main>

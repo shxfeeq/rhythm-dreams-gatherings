@@ -11,8 +11,10 @@ const choices: { value: ThemeChoice; label: string; Icon: typeof Sun }[] = [
 ];
 
 function applyTheme(theme: ThemeChoice) {
-  document.documentElement.dataset.theme = theme;
-  document.documentElement.style.colorScheme = theme === "system" ? "light dark" : theme;
+  const resolved = theme === "system" ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : theme;
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.dataset.themeChoice = theme;
+  document.documentElement.style.colorScheme = resolved;
   window.localStorage.setItem("rdg-theme", theme);
 }
 
@@ -23,8 +25,11 @@ export function ThemeToggle() {
     const saved = window.localStorage.getItem("rdg-theme");
     const initial = saved === "light" || saved === "dark" ? saved : "system";
     setTheme(initial);
-    document.documentElement.dataset.theme = initial;
-    document.documentElement.style.colorScheme = initial === "system" ? "light dark" : initial;
+    applyTheme(initial);
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => { if (initial === "system") applyTheme("system"); };
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
   return (

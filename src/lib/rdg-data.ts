@@ -37,16 +37,15 @@ export const serviceCatalog = [
 ] as const;
 
 export const services = [
-  { number: "01", title: "Event Management", description: "From the first brief to the final cue, we bring every moving part into one considered production.", features: ["Complete Event Planning", "Event Coordination", "On-ground Execution", "Venue Management", "Guest Management", "Production Coordination"], image: "/assets/images/work-01.jpg" },
-  { number: "02", title: "Wedding Events", description: "Meaningful celebrations shaped with visual detail, cultural sensitivity and seamless execution.", features: ["Wedding Planning", "Wedding Photography", "Candid Photography", "Wedding Videography", "Cinematic Wedding Films", "Reception Events", "Traditional Functions", "Wedding Entertainment"], image: "/assets/images/weddings.jpg" },
-  { number: "03", title: "Photography & Videography", description: "Honest frames, cinematic movement and films that let every atmosphere live beyond the event.", features: ["Candid Photography", "Traditional Photography", "Cinematic Videography", "Event Photography", "Event Videography", "Highlight Films", "After Movies"], image: "/assets/images/work-03.jpg" },
-  { number: "04", title: "Instant Reels", description: "Your event. Your moment. Your reel — before the function ends.", features: ["Live event capture", "On-site editing", "Social-ready format", "Same-event delivery"], image: "/assets/images/instant-reel.jpg", featured: true },
-  { number: "05", title: "DJ & Entertainment", description: "Sound, light and performance planned to move the room and hold its energy.", features: ["DJ", "Sound", "Lighting", "Live Entertainment", "Dance Performances", "Music Events", "College DJ Nights", "Celebration Entertainment"], image: "/assets/images/entertainment.jpg" },
-  { number: "06", title: "Stage & Decoration", description: "Immersive stages and thoughtful environments built around your event’s identity.", features: ["Stage Design", "Wedding Stage Decoration", "Event Decor", "LED Walls", "Lighting Design", "Themed Setups"], image: "/assets/images/work-06.jpg" },
-  { number: "07", title: "College & Youth Events", description: "High-energy experiences built for campus culture, participation and unforgettable moments.", features: ["College Cultural Events", "Symposiums", "Fests", "DJ Nights", "Celebrity Events", "Celebrity Management", "Photography", "Videography", "After Movies", "Social Media Content"], image: "/assets/images/college-events.jpg" },
-  { number: "08", title: "Corporate Events", description: "Clear, polished productions that bring teams, brands and audiences together.", features: ["Corporate Events", "Brand Activations", "Product Launches", "Corporate Celebrations", "Conferences", "Award Functions", "Promotional Events"], image: "/assets/images/corporate.jpg" },
-  { number: "09", title: "Celebrity Management", description: "Considered coordination for artists and special guests, from invitation through on-ground handling.", features: ["Celebrity Invitations", "Celebrity Coordination", "Artist Coordination", "Guest Management", "Celebrity Event Handling", "On-ground Coordination"], image: "/assets/images/work-07.jpg" },
-  { number: "10", title: "Creative Media", description: "Campaign-ready visual content that gives every event a life before, during and after the day.", features: ["Event Posters", "Invitation Videos", "Promo Videos", "Social Media Reels", "Highlight Videos", "AI Memory / Tribute Videos", "Digital Event Content"], image: "/assets/images/work-08.jpg" },
+  { number: "01", title: "Event Management", description: "From the first brief to the final cue, we bring every moving part into one considered production.", features: ["Complete Event Planning", "Event Coordination", "On-ground Execution", "Venue Management", "Guest Management", "Production Coordination"], image: rdgAssets.photos[3].src },
+  { number: "02", title: "Wedding Events", description: "Meaningful celebrations shaped with visual detail, cultural sensitivity and seamless execution.", features: ["Wedding Planning", "Wedding Photography", "Candid Photography", "Wedding Videography", "Cinematic Wedding Films", "Reception Events", "Traditional Functions", "Wedding Entertainment"], image: rdgAssets.photos[4].src },
+  { number: "03", title: "Photography & Videography", description: "Honest frames, cinematic movement and films that let every atmosphere live beyond the event.", features: ["Candid Photography", "Traditional Photography", "Cinematic Videography", "Event Photography", "Event Videography", "Highlight Films", "After Movies"], image: rdgAssets.photos[5].src },
+  { number: "04", title: "Instant Reels", description: "Your event. Your moment. Your reel — before the function ends.", features: ["Live event capture", "On-site editing", "Social-ready format", "Same-event delivery"], image: rdgAssets.photos[3].src, featured: true },
+  { number: "05", title: "DJ & Entertainment", description: "Sound, light and performance planned to move the room and hold its energy.", features: ["DJ", "Sound", "Lighting", "Live Entertainment", "Dance Performances", "Music Events", "College DJ Nights", "Celebration Entertainment"], image: rdgAssets.photos[3].src },
+  { number: "06", title: "Stage & Decoration", description: "Immersive stages and thoughtful environments built around your event’s identity.", features: ["Stage Design", "Wedding Stage Decoration", "Event Decor", "LED Walls", "Lighting Design", "Themed Setups"], image: rdgAssets.photos[2].src },
+  { number: "07", title: "College & Youth Events", description: "High-energy experiences built for campus culture, participation and unforgettable moments.", features: ["College Cultural Events", "Symposiums", "Fests", "DJ Nights", "Celebrity Events", "Celebrity Management", "Photography", "Videography", "After Movies", "Social Media Content"], image: rdgAssets.photos[3].src },
+  { number: "08", title: "Corporate Events", description: "Clear, polished productions that bring teams, brands and audiences together.", features: ["Corporate Events", "Brand Activations", "Product Launches", "Corporate Celebrations", "Conferences", "Award Functions", "Promotional Events"], image: rdgAssets.photos[1].src },
+  { number: "09", title: "Creative Media", description: "Campaign-ready visual content that gives every event a life before, during and after the day.", features: ["Event Posters", "Invitation Videos", "Promo Videos", "Social Media Reels", "Highlight Videos", "Digital Event Content"], image: rdgAssets.photos[6].src },
 ] as const;
 
 export const workItems = [
@@ -60,14 +59,12 @@ export const workItems = [
 ] as const;
 
 export const experiences = [
-  ["Weddings", "Tradition, emotion and a celebration built around you.", "/assets/images/weddings.jpg"],
-  ["College Fests", "Big-stage energy for the moments campus remembers.", "/assets/images/college-events.jpg"],
-  ["Corporate Events", "Sharp productions with purpose and polish.", "/assets/images/corporate.jpg"],
-  ["Celebrations", "Personal milestones made beautifully memorable.", "/assets/images/work-05.jpg"],
-  ["Entertainment", "Sound, light and performances that move a crowd.", "/assets/images/entertainment.jpg"],
-  ["Celebrity Events", "Professional guest and artist coordination.", "/assets/images/work-07.jpg"],
-  ["Cultural Events", "Rich traditions presented with contemporary craft.", "/assets/images/work-02.jpg"],
-  ["Brand Events", "Audience-first experiences that bring ideas to life.", "/assets/images/work-03.jpg"],
+  ["Weddings", "Tradition, emotion and a celebration built around you.", rdgAssets.photos[4].src],
+  ["Live events", "Shared energy for the moments people remember.", rdgAssets.photos[3].src],
+  ["Photography", "Honest frames shaped around the people and place.", rdgAssets.photos[6].src],
+  ["Family celebrations", "Personal milestones made memorable.", rdgAssets.photos[0].src],
+  ["Creative moments", "Careful coordination from brief to event day.", rdgAssets.photos[1].src],
+  ["Classical performances", "Traditions presented with care.", rdgAssets.photos[2].src],
 ] as const;
 
 export const collaborations = [
@@ -77,10 +74,10 @@ export const collaborations = [
   ["SRI Trophy", "/assets/images/partners/sri-trophy.png"],
 ] as const;
 export const whyRDG = [
-  ["Full-service team", "Planning, production, photography, film and entertainment under one roof."],
-  ["Same-event delivery", "Instant Reels edited on site and handed over before the function ends."],
-  ["Campus specialists", "Trusted with fests, symposiums and celebrity nights across Tamil Nadu."],
-  ["Detail obsessed", "Stage, light, sound and schedule rehearsed long before your guests arrive."],
+  ["Thoughtful planning", "A clear brief keeps priorities and event details in view."],
+  ["Creative coordination", "Connect planning, photography, film and production arrangements."],
+  ["Tailored to your brief", "Options are discussed around your occasion and requirements."],
+  ["Attention to detail", "Careful coordination from the first conversation through the event."],
 ] as const;
 
 export const testimonials = [
@@ -88,12 +85,7 @@ export const testimonials = [
 ] as const;
 
 export const instagramGallery = [
-  "/assets/images/work-02.jpg",
-  "/assets/images/instant-reel.jpg",
-  "/assets/images/entertainment.jpg",
-  "/assets/images/work-05.jpg",
-  "/assets/images/college-events.jpg",
-  "/assets/images/work-07.jpg",
+  ...rdgAssets.photos.map((photo) => photo.src),
 ] as const;
 
 export const reels = [

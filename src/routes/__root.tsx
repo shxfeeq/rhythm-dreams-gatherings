@@ -107,7 +107,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <script>{`try{var t=localStorage.getItem('rdg-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:'system';document.documentElement.style.colorScheme=t==='light'||t==='dark'?t:'light dark'}catch(e){document.documentElement.dataset.theme='system'}`}</script>
+        <script>{`try{var t=localStorage.getItem('rdg-theme');if(t!=='light'&&t!=='dark')t='system';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.dataset.theme=r;document.documentElement.dataset.themeChoice=t;document.documentElement.style.colorScheme=r}catch(e){document.documentElement.dataset.theme='light';document.documentElement.dataset.themeChoice='system'}`}</script>
         <HeadContent />
       </head>
       <body>
