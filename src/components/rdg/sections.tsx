@@ -49,7 +49,7 @@ export function Hero() {
           Every Celebration
           <span className="block text-champagne">Deserves to Be Extraordinary.</span>
         </h1>
-        <p className="reveal mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
+        <p className="reveal mt-6 max-w-xl text-base text-foreground md:text-lg">
           From unforgettable celebrations to timeless photographs and creative experiences, RDG brings your vision to life.
         </p>
         <div className="reveal mt-10 flex flex-wrap gap-3">
@@ -81,14 +81,14 @@ export function About() {
             We build events people keep talking about.
           </h2>
           <p className="mt-6 text-muted-foreground">
-            Rhythm Dreams Gatherings is an event management and creative production house based in
-            Kumbakonam. We plan, design and run weddings, college fests, corporate productions and
-            celebrations — and we film every one of them like it matters.
+            Rhythm Dreams Gatherings is an event management and creative services company based in
+            Kumbakonam. We coordinate events and creative services around each customer’s brief.
           </p>
           <p className="mt-4 text-muted-foreground">
-            One team handles planning, stage, sound, light, entertainment, photography and film, so
-            nothing falls between vendors and nothing gets lost on the day.
+            Services include event planning, photography and videography, production arrangements,
+            printing coordinated through external partners, photo frames and creative design.
           </p>
+          <Link to="/about" className="mt-6 inline-flex items-center gap-2 text-sm text-champagne hover:underline">Our story <ArrowRight className="size-4" /></Link>
           <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {[
               ["Kumbakonam", "Our home"],
@@ -142,7 +142,7 @@ export function Services() {
           <h2 className="font-display text-3xl leading-tight sm:text-4xl">Services</h2>
         </div>
         <p className="max-w-md text-sm text-muted-foreground">
-          Ten verticals, one production team. Select a service to see exactly what is included.
+          Explore event, photography, production coordination and creative services.
         </p>
       </div>
 
@@ -201,11 +201,10 @@ export function InstantReels() {
         <div>
           <p className="eyebrow mb-4 text-lime">Instant Reels</p>
           <h2 className="font-display text-3xl leading-tight sm:text-4xl">
-            Your reel, before the function ends.
+            Event moments, shaped into short-form films.
           </h2>
           <p className="mt-6 text-muted-foreground">
-            We shoot, cut and colour on site — so your highlight reel is on your phone and your
-            story while your guests are still on the floor.
+            Ask RDG about event capture and short-form editing. Coverage and delivery arrangements are discussed around your event and requirements.
           </p>
           <Link
             to="/reels"
@@ -431,8 +430,8 @@ export function InstagramStrip() {
     <Section className="border-t border-border">
       <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Eyebrow>On Instagram</Eyebrow>
-          <h2 className="break-all font-display text-2xl sm:text-3xl">{RDG.instagramHandle}</h2>
+          <Eyebrow>RDG event moments</Eyebrow>
+          <h2 className="break-all font-display text-2xl sm:text-3xl">Follow RDG on Instagram</h2>
         </div>
         <a
           href={RDG.instagram}
@@ -470,7 +469,7 @@ export function Contact() {
             Let’s plan something worth remembering.
           </h2>
           <p className="mt-6 text-muted-foreground">
-            Tell us the date and the idea — we’ll come back with a plan, a team and a quote.
+            Share your requirements so RDG can discuss availability, service options and a quotation.
           </p>
           <ul className="mt-10 space-y-4 text-sm">
             <li>
@@ -489,10 +488,7 @@ export function Contact() {
               </a>
             </li>
             <li><a href={`mailto:${RDG.email}`} className="inline-flex items-start gap-3 break-all hover:text-champagne">{RDG.email}</a></li>
-            <li className="inline-flex items-center gap-3 text-muted-foreground">
-              <MapPin className="size-4 text-champagne" aria-hidden /> {RDG.location}
-            </li>
-            <li><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(RDG.address)}`} target="_blank" rel="noreferrer" className="inline-flex items-start gap-3 hover:text-champagne"><MapPin className="size-4 shrink-0 text-champagne" aria-hidden />{RDG.address}</a></li>
+            <li><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(RDG.address)}`} target="_blank" rel="noreferrer" className="inline-flex items-start gap-3 hover:text-champagne"><MapPin className="mt-0.5 size-4 shrink-0 text-champagne" aria-hidden />{RDG.address}</a></li>
           </ul>
         </div>
         <div className="reveal flex flex-col justify-center border-t border-border pt-7">
