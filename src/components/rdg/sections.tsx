@@ -403,14 +403,11 @@ export function Partners() {
           Teams we have worked with
         </h2>
       </div>
-      <div className="grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4">
-        {collaborations.map(([name, logo]) => (
-          <div key={name} className="reveal flex flex-col items-center gap-4 bg-background p-10">
-            <SmartImage src={logo} alt={name} className="h-16 w-full bg-transparent" imgClassName="object-contain" />
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{name}</p>
-          </div>
-        ))}
+      <div className="grid border-y border-border sm:grid-cols-2 lg:grid-cols-4">
+        {collaborations.map(([name]) => <p key={name} className="border-b border-border py-6 font-display text-lg sm:px-5 lg:border-b-0 lg:border-r last:border-r-0">{name}</p>)}
       </div>
+      <p className="mt-4 text-xs text-muted-foreground">Names shown from RDG’s provided collaboration list; partner logos are not displayed until verified originals are supplied.</p>
+      <Link to="/partners" className="mt-5 inline-flex items-center gap-2 text-sm text-champagne hover:underline">Partner details <ArrowRight className="size-4" /></Link>
     </Section>
   );
 }
