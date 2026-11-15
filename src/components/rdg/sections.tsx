@@ -572,7 +572,7 @@ export function Footer() {
 
 export function FloatingActions() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] shadow-lg sm:inset-x-auto sm:bottom-5 sm:right-5 sm:flex sm:flex-col sm:border-0 sm:bg-transparent sm:pb-0 sm:shadow-none">
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] shadow-lg sm:inset-x-auto sm:bottom-5 sm:right-5 sm:flex sm:flex-col sm:border-0 sm:bg-transparent sm:pb-0 sm:shadow-none">
       <a
         href={RDG.whatsapp}
         target="_blank"
