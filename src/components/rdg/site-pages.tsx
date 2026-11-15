@@ -219,17 +219,17 @@ export function BookingPage() {
   }, []);
   useEffect(() => { if (ready) window.sessionStorage.setItem("rdg-booking-draft", JSON.stringify(form)); }, [form, ready]);
   useEffect(() => {
-    const slug = search.service;
+    const slug = search["service"];
     if (!slug) return;
     const service = serviceCatalog.find((item) => item.slug === slug);
     if (!service) return;
     const suggestion = service.category === "Printing Services" ? "Wedding invitations" : service.category === "Photo Studio & Photo Frames" ? "Photo printing" : service.category === "Creative Design" ? "Digital invitation" : service.category === "Event Production" ? "Event production" : service.category === "Photography & Videography" ? "Event coverage" : "Event planning and management";
-    setForm((current) => ({ ...current, services: Array.from(new Set([...(Array.isArray(current.services) ? current.services : []), suggestion])) }));
-  }, [search.service]);
-  const selectedServices = Array.isArray(form.services) ? form.services : [];
-  const currentSummary = useMemo(() => Object.entries(form).filter(([key, value]) => key !== "services" && typeof value === "string" && value.trim()).map(([key, value]) => [fieldLabels[key] ?? key, value] as const), [form]);
+    setForm((current) => ({ ...current, ["services"]: Array.from(new Set([...(Array.isArray(current["services"]) ? current["services"] : []), suggestion])) }));
+  }, [search["service"]]);
+  const selectedServices = Array.isArray(form["services"]) ? form["services"] : [];
+  const currentSummary = useMemo(() => Object.entries(form).filter(([key, value]) => key !== "services" && typeof value === "string" && value.trim()).map(([key]) => [fieldLabels[key] ?? key, valueOf(form, key)] as const), [form]);
   const update = (key: string, value: string) => setForm((current) => ({ ...current, [key]: value }));
-  const toggleService = (name: string) => setForm((current) => { const active = Array.isArray(current.services) ? current.services : []; return { ...current, services: active.includes(name) ? active.filter((item) => item !== name) : [...active, name] }; });
+  const toggleService = (name: string) => setForm((current) => { const active = Array.isArray(current["services"]) ? current["services"] : []; return { ...current, ["services"]: active.includes(name) ? active.filter((item) => item !== name) : [...active, name] }; });
   const fieldClass = "mt-2 w-full min-w-0 border border-border bg-background px-3 py-3 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring";
   const field = (key: string, label: string, type = "text", placeholder?: string, required = false) => <label key={key} className="block min-w-0 text-sm text-muted-foreground">{label}{required && <span className="ml-1 text-champagne" aria-hidden="true">*</span>}<input required={required} type={type} value={valueOf(form, key)} onChange={(event) => update(key, event.target.value)} placeholder={placeholder} className={fieldClass} /></label>;
   const area = (key: string, label: string, required = false) => <label key={key} className="block text-sm text-muted-foreground">{label}{required && <span className="ml-1 text-champagne" aria-hidden="true">*</span>}<textarea required={required} rows={3} value={valueOf(form, key)} onChange={(event) => update(key, event.target.value)} className={fieldClass} /></label>;
@@ -252,7 +252,7 @@ export function BookingPage() {
     const event = currentSummary.filter(([label]) => ["Event category", "Specific event", "Event date", "Alternative event date", "Start time", "End time", "Event duration", "Number of event days", "Venue name", "Full event address", "City or town", "Indoor or outdoor", "Expected guest count", "Additional event information"].includes(label));
     const specs = currentSummary.filter(([label]) => !customer.some(([n]) => n === label) && !event.some(([n]) => n === label) && !["Estimated budget range", "Preferred package", "Additional services", "Special requests", "Notes"].includes(label));
     const lines = (entries: readonly (readonly [string, string])[]) => entries.length ? entries.map(([label, value]) => `${label}: ${value}`).join("\n") : "Not provided";
-    const message = ["Hello RDG Team!", "", "I would like to enquire about your services.", "", "CUSTOMER INFORMATION", lines(customer), "", "EVENT INFORMATION", lines(event), "", "SERVICES REQUIRED:", selectedServices.length ? selectedServices.map((name) => `• ${name}`).join("\n") : "Not selected", "", "SERVICE SPECIFICATIONS:", lines(specs), "", "BUDGET:", `${valueOf(form, "budget") || "Not specified"}${valueOf(form, "package") ? ` · ${valueOf(form, "package")}` : ""}`, "", "ADDITIONAL REQUIREMENTS:", [valueOf(form, "additionalServices"), valueOf(form, "specialRequests"), valueOf(form, "notes")].filter(Boolean).join("\n") || "None provided", fileNames.length ? "\nREFERENCE FILES:\nI have selected reference files and will attach them manually after WhatsApp opens: " + fileNames.join(", ") : "", "", "Please contact me to discuss availability, requirements and quotation.", "", "Thank you!", "RDG Website Enquiry."].join("\n");
+    const message = ["Hello RDG Team!", "", "I would like to enquire about your services.", "", "CUSTOMER INFORMATION", lines(customer), "", "EVENT INFORMATION", lines(event), "", "SERVICES REQUIRED:", selectedServices.length ? selectedServices.map((name) => `• ${name}`).join("\n") : "Not selected", "", "SERVICE SPECIFICATIONS:", lines(specs), "", "BUDGET:", `${valueOf(form, "budget") || "Not specified"}${valueOf(form, "package") ? ` · ${valueOf(form, "package")}` : ""}`, "", "ADDITIONAL REQUIREMENTS:", [valueOf(form, "extraRequirements"), valueOf(form, "additionalServices"), valueOf(form, "specialRequests"), valueOf(form, "notes")].filter(Boolean).join("\n") || "None provided", fileNames.length ? "\nREFERENCE FILES:\nI have selected reference files and will attach them manually after WhatsApp opens: " + fileNames.join(", ") : "", "", "Please contact me to discuss availability, requirements and quotation.", "", "Thank you!", "RDG Website Enquiry."].join("\n");
     return `${RDG.whatsapp}?text=${encodeURIComponent(message)}`;
   };
   const openWhatsApp = () => {

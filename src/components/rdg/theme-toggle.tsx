@@ -12,8 +12,8 @@ const choices: { value: ThemeChoice; label: string; Icon: typeof Sun }[] = [
 
 function applyTheme(theme: ThemeChoice) {
   const resolved = theme === "system" ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : theme;
-  document.documentElement.dataset.theme = resolved;
-  document.documentElement.dataset.themeChoice = theme;
+  document.documentElement.dataset["theme"] = resolved;
+  document.documentElement.dataset["themeChoice"] = theme;
   document.documentElement.style.colorScheme = resolved;
   window.localStorage.setItem("rdg-theme", theme);
 }
@@ -23,16 +23,14 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("rdg-theme");
-    setTheme(saved === "light" || saved === "dark" ? saved : "system");
-  }, []);
-
-  useEffect(() => {
-    applyTheme(theme);
+    const initial = saved === "light" || saved === "dark" ? saved : "system";
+    setTheme(initial);
+    applyTheme(initial);
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = () => { if (theme === "system") applyTheme("system"); };
+    const onChange = () => { if (initial === "system") applyTheme("system"); };
     media.addEventListener("change", onChange);
     return () => media.removeEventListener("change", onChange);
-  }, [theme]);
+  }, []);
 
   return (
     <div role="group" aria-label="Choose colour theme" className="flex items-center gap-1">
