@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight, ArrowUpRight, Youtube, Facebook } from "lucide-react";
 import { SmartImage } from "./media";
 import {
   RDG,
@@ -7,7 +7,6 @@ import {
   experiences,
   instagramGallery,
   services,
-  testimonials,
   whyRDG,
   workItems,
 } from "@/lib/rdg-data";
@@ -404,14 +403,11 @@ export function Partners() {
           Teams we have worked with
         </h2>
       </div>
-      <div className="grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4">
-        {collaborations.map(([name, logo]) => (
-          <div key={name} className="reveal flex flex-col items-center gap-4 bg-background p-10">
-            <SmartImage src={logo} alt={name} className="h-16 w-full bg-transparent" imgClassName="object-contain" />
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{name}</p>
-          </div>
-        ))}
+      <div className="grid border-y border-border sm:grid-cols-2 lg:grid-cols-4">
+        {collaborations.map(([name]) => <p key={name} className="border-b border-border py-6 font-display text-lg sm:px-5 lg:border-b-0 lg:border-r last:border-r-0">{name}</p>)}
       </div>
+      <p className="mt-4 text-xs text-muted-foreground">Names shown from RDG’s provided collaboration list; partner logos are not displayed until verified originals are supplied.</p>
+      <Link to="/partners" className="mt-5 inline-flex items-center gap-2 text-sm text-champagne hover:underline">Partner details <ArrowRight className="size-4" /></Link>
     </Section>
   );
 }
@@ -421,7 +417,7 @@ export function Testimonials() {
     <Section className="border-t border-border bg-card/40">
       <div className="reveal mb-12">
         <Eyebrow>Kind words</Eyebrow>
-        <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">
           What clients say
         </h2>
       </div>
@@ -562,8 +558,8 @@ export function Footer() {
           >
             <Instagram className="size-4" />
           </a>
-          <a href={RDG.youtube} target="_blank" rel="noreferrer" aria-label="RDG on YouTube" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">Y</a>
-          <a href={RDG.facebook} target="_blank" rel="noreferrer" aria-label="RDG on Facebook" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">f</a>
+      <a href={RDG.youtube} target="_blank" rel="noreferrer" aria-label="RDG on YouTube" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne"><Youtube className="size-4" /></a>
+      <a href={RDG.facebook} target="_blank" rel="noreferrer" aria-label="RDG on Facebook" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne"><Facebook className="size-4" /></a>
         </div>
         <div className="w-full border-t border-border pt-5 text-xs text-muted-foreground"><p>© {new Date().getFullYear()} {RDG.name}</p><p className="mt-2">{RDG.address} · <a href={`tel:${RDG.phone}`} className="hover:text-champagne">{RDG.phoneDisplay}</a> · <a href={`mailto:${RDG.email}`} className="hover:text-champagne">{RDG.email}</a></p></div>
       </div>
@@ -573,7 +569,7 @@ export function Footer() {
 
 export function FloatingActions() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] shadow-lg sm:inset-x-auto sm:bottom-5 sm:right-5 sm:flex sm:flex-col sm:border-0 sm:bg-transparent sm:pb-0 sm:shadow-none">
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] shadow-lg sm:inset-x-auto sm:bottom-5 sm:right-5 sm:flex sm:flex-col sm:border-0 sm:bg-transparent sm:pb-0 sm:shadow-none">
       <a
         href={RDG.whatsapp}
         target="_blank"

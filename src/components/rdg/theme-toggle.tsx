@@ -12,8 +12,8 @@ const choices: { value: ThemeChoice; label: string; Icon: typeof Sun }[] = [
 
 function applyTheme(theme: ThemeChoice) {
   const resolved = theme === "system" ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : theme;
-  document.documentElement.dataset.theme = resolved;
-  document.documentElement.dataset.themeChoice = theme;
+  document.documentElement.dataset["theme"] = resolved;
+  document.documentElement.dataset["themeChoice"] = theme;
   document.documentElement.style.colorScheme = resolved;
   window.localStorage.setItem("rdg-theme", theme);
 }
