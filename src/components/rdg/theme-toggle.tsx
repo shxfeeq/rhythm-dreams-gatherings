@@ -23,14 +23,16 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("rdg-theme");
-    const initial = saved === "light" || saved === "dark" ? saved : "system";
-    setTheme(initial);
-    applyTheme(initial);
+    setTheme(saved === "light" || saved === "dark" ? saved : "system");
+  }, []);
+
+  useEffect(() => {
+    applyTheme(theme);
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = () => { if (initial === "system") applyTheme("system"); };
+    const onChange = () => { if (theme === "system") applyTheme("system"); };
     media.addEventListener("change", onChange);
     return () => media.removeEventListener("change", onChange);
-  }, []);
+  }, [theme]);
 
   return (
     <div role="group" aria-label="Choose colour theme" className="flex items-center gap-1">

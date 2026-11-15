@@ -31,6 +31,7 @@
   --color-champagne: var(--champagne);
   --color-lime: var(--lime);
   --color-ink: var(--ink);
+  --color-signature-background: var(--signature-background);
   --font-display: "Syne", sans-serif;
   --font-sans: "Manrope", sans-serif;
 }
@@ -61,7 +62,8 @@
   --ring: oklch(0.56 0.09 77);
   --champagne: oklch(0.56 0.09 77);
   --lime: oklch(0.49 0.1 125);
-  --ink: oklch(0.98 0.012 85);
+  --ink: oklch(0.12 0.005 250);
+  --signature-background: oklch(0.98 0.012 85);
 }
 
 :root[data-theme="dark"] {
@@ -85,6 +87,7 @@
   --champagne: oklch(0.83 0.075 85);
   --lime: oklch(0.88 0.2 125);
   --ink: oklch(0.12 0.005 250);
+  --signature-background: oklch(0.98 0.012 85);
 }
 
 :root[data-theme="light"] { color-scheme: light; }

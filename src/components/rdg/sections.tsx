@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Instagram, MapPin, MessageCircle, Phone, Play, X, ChevronLeft, ChevronRight, ArrowUpRight, Youtube, Facebook } from "lucide-react";
 import { SmartImage } from "./media";
 import {
   RDG,
@@ -7,7 +7,6 @@ import {
   experiences,
   instagramGallery,
   services,
-  testimonials,
   whyRDG,
   workItems,
 } from "@/lib/rdg-data";
@@ -421,7 +420,7 @@ export function Testimonials() {
     <Section className="border-t border-border bg-card/40">
       <div className="reveal mb-12">
         <Eyebrow>Kind words</Eyebrow>
-        <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05]">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">
           What clients say
         </h2>
       </div>
@@ -562,8 +561,8 @@ export function Footer() {
           >
             <Instagram className="size-4" />
           </a>
-          <a href={RDG.youtube} target="_blank" rel="noreferrer" aria-label="RDG on YouTube" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">Y</a>
-          <a href={RDG.facebook} target="_blank" rel="noreferrer" aria-label="RDG on Facebook" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne">f</a>
+      <a href={RDG.youtube} target="_blank" rel="noreferrer" aria-label="RDG on YouTube" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne"><Youtube className="size-4" /></a>
+      <a href={RDG.facebook} target="_blank" rel="noreferrer" aria-label="RDG on Facebook" className="inline-flex size-11 items-center justify-center border border-border hover:border-champagne hover:text-champagne"><Facebook className="size-4" /></a>
         </div>
         <div className="w-full border-t border-border pt-5 text-xs text-muted-foreground"><p>© {new Date().getFullYear()} {RDG.name}</p><p className="mt-2">{RDG.address} · <a href={`tel:${RDG.phone}`} className="hover:text-champagne">{RDG.phoneDisplay}</a> · <a href={`mailto:${RDG.email}`} className="hover:text-champagne">{RDG.email}</a></p></div>
       </div>
