@@ -57,7 +57,7 @@ export function AboutPage() {
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {serviceCatalog.map((service) => <Link key={service.slug} to="/services/$slug" params={{ slug: service.slug }} className="group flex items-center justify-between border-t border-border py-5 hover:text-champagne"><span className="font-display text-xl">{service.title}</span><ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></Link>)}
         </div>
-        <div className="mt-12 flex flex-wrap gap-3"><Button asChild><Link to="/leadership">Meet our Managing Director</Link></Button><Button variant="outline" asChild><Link to="/booking">Start an enquiry</Link></Button></div>
+        <div className="mt-12 flex flex-wrap gap-3"><Button asChild><Link to="/leadership">Meet our founder</Link></Button><Button variant="outline" asChild><Link to="/booking">Start an enquiry</Link></Button></div>
       </PageSection>
     </PageShell>
   );
@@ -177,8 +177,7 @@ export function ExperiencesPage() {
 
 export function PartnersPage() {
   const partners = ["SASTRA University", "Team Emulsion", "Purple Rah Events", "SRI Trophy"];
-  const logos = ["/assets/images/partners/sastra.png", "/assets/images/partners/emulsion.png", "/assets/images/partners/purple-rah.png", "/assets/images/partners/sri-trophy.png"];
-  return <PageShell><PageSection><PageIntro eyebrow="Partners" title="Collaboration makes the work possible." copy="A selection of organizations and creative collaborators listed by RDG." /><div className="grid border-y border-border sm:grid-cols-2">{partners.map((name, index) => <article key={name} className="flex items-center gap-6 border-b border-border px-2 py-8 last:border-b-0 sm:even:border-l sm:even:pl-8"><SmartImage src={logos[index] ?? ""} alt={`${name} logo`} className="h-16 w-28 shrink-0 bg-transparent" imgClassName="object-contain" /><h2 className="font-display text-xl">{name}</h2></article>)}</div><p className="mt-6 text-xs text-muted-foreground">Displayed names and images are the collaboration entries currently provided by RDG.</p></PageSection></PageShell>;
+  return <PageShell><PageSection><PageIntro eyebrow="Partners" title="Collaboration makes the work possible." copy="A selection of organizations and creative collaborators listed by RDG." /><div className="grid border-y border-border sm:grid-cols-2">{partners.map((name) => <article key={name} className="flex min-h-28 items-center border-b border-border px-2 py-8 last:border-b-0 sm:even:border-l sm:even:pl-8"><h2 className="font-display text-2xl">{name}</h2></article>)}</div><p className="mt-6 text-xs text-muted-foreground">Names are shown as provided in RDG’s current collaboration list; no unverified partner marks are displayed.</p></PageSection></PageShell>;
 }
 
 const eventCategories = ["Wedding", "Reception", "Engagement", "Birthday", "Anniversary", "Baby shower", "Naming ceremony", "Corporate event", "College event", "Cultural event", "Private celebration", "Other"];
